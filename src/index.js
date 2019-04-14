@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import express from 'express';
 
 const port = process.env.PORT || 8080;
@@ -7,4 +8,6 @@ app.get('/', (req, res) => {
   res.json({ message: 'success' }).status(200);
 });
 
-app.listen(port, () => console.log('Server running on ', port));
+const server = app.listen(port, () => console.log('Server running on ', port));
+
+export default server;
